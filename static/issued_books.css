@@ -1,0 +1,88 @@
+/* General Page Background - smooth gradient */
+body {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background: linear-gradient(135deg, #eaeaea, #f5f5f5, #d6d6d6, #444);
+    background-size: 400% 400%;
+    animation: gradientMove 15s ease infinite;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* Smooth animated gradient */
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Header */
+h1 {
+    color: #111;
+    margin: 20px 0;
+    font-size: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+/* Back Button */
+a {
+    display: inline-block;
+    margin: 15px 0 25px 0;
+    padding: 8px 18px;
+    background: linear-gradient(90deg, #555, #777, #999);
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+a:hover {
+    background: linear-gradient(90deg, #999, #666, #444);
+    transform: scale(1.05);
+}
+
+/* Table */
+table {
+    margin: 0 auto;
+    width: 85%;
+    border-collapse: collapse;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Table Header */
+th {
+    background: linear-gradient(90deg, #444, #666);
+    color: #f5f5f5;
+    padding: 14px 18px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* Table Rows */
+td {
+    padding: 12px 18px;
+    border-bottom: 1px solid #ccc;
+    font-size: 14px;
+    color: #222;
+}
+
+/* Row Shades */
+tr:nth-child(even) {
+    background: #fafafa; /* lightest gray */
+}
+
+tr:nth-child(odd) {
+    background: #f0f0f0; /* soft gray */
+}
+
+tr:hover {
+    background: linear-gradient(90deg, #ddd, #ccc, #bbb); /* shade effect */
+    transition: 0.3s ease;
+}

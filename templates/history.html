@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>History</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='history.css') }}">
+</head>
+<body>
+    <h1>📚 Book Issue / Return History</h1>
+
+    <!-- Back Button -->
+    <a href="{{ url_for('admin_dashboard') }}" class="back-btn">⬅ Back to Dashboard</a>
+
+    <!-- History Table -->
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Action</th>
+                <th>User</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for record in history %}
+            <tr>
+                <td>{{ record.title }}</td>
+                <td>{{ record.action }}</td>
+                <td>{{ record.user }}</td>
+                <td>{{ record.date }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

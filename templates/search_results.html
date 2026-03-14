@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head><title>Search Books</title></head>
+<link rel="stylesheet" href="{{ url_for('static', filename='search.css') }}">
+<body>
+<h1>Search Books</h1>
+<form action="{{ url_for('search_books') }}" method="post">
+    <input type="text" name="keyword" placeholder="Enter title or author" required>
+    <button type="submit">Search</button>
+</form>
+<a href="{{ url_for('admin_dashboard') }}">Back to Dashboard</a>
+
+{% if books %}
+<table border="1" cellpadding="5" cellspacing="0" style="margin-top:20px;">
+    <thead>
+        <tr><th>Title</th><th>Author</th><th>Status</th></tr>
+    </thead>
+    <tbody>
+    {% for book in books %}
+        <tr>
+            <td>{{ book.title }}</td>
+            <td>{{ book.author }}</td>
+            <td>{{ book.status }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% elif request.method == 'POST' %}
+<p>No books found matching your search.</p>
+{% endif %}
+</body>
+</html>

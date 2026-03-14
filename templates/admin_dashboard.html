@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='admin_dashboard.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1><span class="sun-logo">🌞</span> Admin Dashboard</h1>
+        <p>Welcome, {{ session.get('user', 'Admin') }}</p>
+
+        <!-- Logout Button -->
+        <div class="logout-container">
+            <a href="{{ url_for('logout') }}" class="logout-btn">Logout</a>
+        </div>
+
+        <!-- Add Book Form -->
+        <form action="{{ url_for('add_book') }}" method="post">
+            <input type="text" name="title" placeholder="Book Title" required>
+            <input type="text" name="author" placeholder="Author" required>
+            <button type="submit" class="edit-btn">Add Book</button>
+        </form>
+
+        <!-- Books Table -->
+        <table>
+            <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+            {% for book in books %}
+            <tr {% if book.status == 'Issued' %}class="issued-row"{% endif %}>
+                <td>{{ book.title }}</td>
+                <td>{{ book.author }}</td>
+                <td>
+                    <span class="status-pill {% if book.status=='Available' %}status-available{% else %}status-issued{% endif %}">
+                        {{ book.status }}
+                    </span>
+                </td>
+                <td>
+                    <!-- Edit -->
+                    <form action="{{ url_for('update_book', book_id=loop.index0) }}" method="get" style="display:inline;">
+                        <button type="submit" class="edit-btn">Edit</button>
+                    </form>
+
+                    <!-- Issue -->
+                    {% if book.status == 'Available' %}
+                    <form action="{{ url_for('issue_book', book_id=loop.index0) }}" method="post" style="display:inline;">
+                        <input type="text" name="student" placeholder="Student Username" required class="student-input">
+                        <button type="submit" class="issue-btn">Issue</button>
+                    </form>
+                    {% endif %}
+
+                    <!-- Delete -->
+                    <form action="{{ url_for('delete_book', book_id=loop.index0) }}" method="post" style="display:inline;">
+                        <button type="submit" class="delete-btn">Delete</button>
+                    </form>
+
+                    <!-- Return -->
+                    {% if 'issued_to' in book %}
+                    <form action="{{ url_for('return_book', book_id=loop.index0) }}" method="post" style="display:inline;">
+                        <button type="submit" class="return-btn">Return</button>
+                    </form>
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>

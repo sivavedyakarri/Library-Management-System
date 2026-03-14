@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='student_dashboard.css') }}">
+</head>
+<body>
+    <div class="dashboard-container">
+        <h1>📚 Student Dashboard</h1>
+        <p>Welcome, {{ session['user'] }}</p>
+
+        <!-- Buttons -->
+        <div class="button-group">
+            <a href="{{ url_for('logout') }}" class="btn">Logout</a> ||
+            <a href="{{ url_for('student_history') }}" class="btn">View History</a>
+        </div>
+
+        <!-- Books Table -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Book Title</th>
+                    <th>Issue Date & Time</th>
+                    <th>Issued By (Admin)</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% set current_student = session['user'] %}
+                {% set issued_books = books | selectattr("issued_to","equalto", current_student) | list %}
+                
+                {% if issued_books %}
+                    {% for book in issued_books %}
+                    <tr>
+                        <td>{{ book.title }}</td>
+                        <td>{{ book.issue_date }}</td>
+                        <td>{{ book.issued_by }}</td>
+                    </tr>
+                    {% endfor %}
+                {% else %}
+                    <tr>
+                        <td colspan="3" class="no-books">No books issued</td>
+                    </tr>
+                {% endif %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

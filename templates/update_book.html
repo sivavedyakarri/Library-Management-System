@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Book</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='update_book.css') }}">
+</head>
+<body>
+    <div class="form-container">
+        <h1>Edit Book</h1>
+        <form action="{{ url_for('update_book', book_id=book_id) }}" method="post">
+            <input type="text" name="title" value="{{ book.title }}" required placeholder="Book Title">
+            <input type="text" name="author" value="{{ book.author }}" required placeholder="Author">
+            <button type="submit">Update</button>
+        </form>
+        <a href="{{ url_for('admin_dashboard') }}">Back to Dashboard</a>
+    </div>
+</body>
+</html>

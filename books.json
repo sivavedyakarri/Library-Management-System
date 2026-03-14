@@ -1,0 +1,33 @@
+[
+    {
+        "title": "HTML",
+        "author": "Tim Berners-Lee",
+        "status": "Issued",
+        "issued_to": "student",
+        "issued_by": "admin",
+        "issue_date": "2025-09-03 14:56:43"
+    },
+    {
+        "title": "PHP",
+        "author": "Rasmus Lerdorf",
+        "status": "Issued",
+        "issued_to": "student",
+        "issued_by": "admin",
+        "issue_date": "2025-09-03 14:57:00"
+    },
+    {
+        "title": "JAVA",
+        "author": "James Arthur Gosling",
+        "status": "Available"
+    },
+    {
+        "title": "C Language",
+        "author": "Dennis MacAlistair Ritchie",
+        "status": "Available"
+    },
+    {
+        "title": "Python",
+        "author": "Guido van Rossum",
+        "status": "Available"
+    }
+]

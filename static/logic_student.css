@@ -1,0 +1,96 @@
+:root {
+    --bg-gradient: linear-gradient(135deg, #84fab0, #8fd3f4); /* soft student pastel */
+    --card-bg: rgba(255, 255, 255, 0.35);
+    --card-shadow: rgba(0,0,0,0.25);
+    --title-color: #1e3c72;
+    --text-color: #333;
+    --input-bg: rgba(255,255,255,0.3);
+    --input-border: rgba(255,255,255,0.5);
+    --button-bg: #1e3c72;
+    --button-hover: #16325c;
+}
+
+/* -------------------- BODY -------------------- */
+body.login-body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    background: var(--bg-gradient);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* -------------------- LOGIN CONTAINER -------------------- */
+.login-container {
+    width: 320px;
+    padding: 30px;
+    background: var(--card-bg);
+    border-radius: 30px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px var(--card-shadow);
+    text-align: center;
+}
+
+/* -------------------- TITLE -------------------- */
+.login-title {
+    margin-bottom: 25px;
+    color: var(--title-color);
+    font-size: 2em;
+    text-shadow: 1px 1px 5px rgba(255,255,255,0.6);
+}
+
+/* -------------------- FORM INPUTS -------------------- */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.login-input {
+    padding: 10px 15px;
+    border-radius: 25px;
+    border: 1px solid var(--input-border);
+    background: var(--input-bg);
+    color: var(--text-color);
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.login-input::placeholder {
+    color: var(--title-color);
+    font-weight: 600;
+}
+
+/* -------------------- LOGIN BUTTON -------------------- */
+.login-btn {
+    padding: 10px 18px;
+    border-radius: 25px;
+    border: none;
+    background: var(--button-bg);
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.login-btn:hover {
+    background: var(--button-hover);
+    transform: scale(1.05);
+    box-shadow: 0 0 8px rgba(30,60,114,0.5);
+}
+
+/* -------------------- ALTERNATE LINK -------------------- */
+.alt-link {
+    display: inline-block;
+    margin-top: 15px;
+    color: var(--title-color);
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.alt-link:hover {
+    text-decoration: underline;
+    color: var(--button-hover);
+}

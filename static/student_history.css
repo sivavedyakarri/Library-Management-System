@@ -1,0 +1,126 @@
+/* student_history.css - Elegant Black/Silver/Glass Theme with Highlights */
+
+/* Body */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #0b0b0b, #1c1c1c, #0b0b0b);
+    margin: 0;
+    padding: 30px;
+    text-align: center;
+    color: #e0e0e0;
+}
+
+/* Heading */
+h1 {
+    font-size: 2.2em;
+    margin-bottom: 20px;
+    color: #f5f5f5;
+    text-shadow: 0 0 12px rgba(255,255,255,0.3), 0 0 20px rgba(192,192,192,0.2);
+    letter-spacing: 1px;
+}
+
+/* Back Button */
+a {
+    display: inline-block;
+    margin: 12px 8px;
+    padding: 10px 20px;
+    min-width: 90px;
+    text-align: center;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+    color: #f5f5f5;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 13px;
+    border: 1px solid rgba(255,255,255,0.15);
+    box-shadow: 0 4px 12px rgba(255,255,255,0.08);
+    transition: all 0.3s ease;
+}
+a:hover {
+    background: rgba(255,255,255,0.12);
+    transform: scale(1.05);
+    box-shadow: 0 6px 18px rgba(255,255,255,0.12);
+}
+
+/* Table Container */
+.table-container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 15px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(15px);
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+
+/* Table */
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 12px;
+    font-size: 14px;
+}
+
+/* Table Header */
+th {
+    background: linear-gradient(135deg, #3c3c3c, #1f1f1f);
+    color: #fff;
+    padding: 14px 20px;
+    font-size: 13px;
+    border-radius: 50px;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.4);
+    box-shadow: 0 2px 8px rgba(255,255,255,0.05);
+}
+
+/* Table Rows */
+td {
+    padding: 12px 18px;
+    background: rgba(255,255,255,0.02);
+    border-radius: 25px;
+    font-size: 13px;
+    color: #e0e0e0;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+/* Highlight content with subtle gradient */
+td:nth-child(1) { /* Title column */
+    background: rgba(255,255,255,0.05);
+    font-weight: 600;
+}
+td:nth-child(2) { /* Action column */
+    background: rgba(255,255,255,0.04);
+    color: #c0c0c0;
+    font-weight: 500;
+}
+td:nth-child(3) { /* Date column */
+    background: rgba(255,255,255,0.03);
+    color: #bfbfbf;
+    font-weight: 500;
+}
+
+/* Hover Effect for Table Rows */
+tr:hover td {
+    background: rgba(255,255,255,0.08);
+    box-shadow: 0 6px 20px rgba(255,255,255,0.08);
+    transform: translateY(-2px);
+}
+
+/* Alternate row shading */
+tbody tr:nth-child(even) td {
+    background: rgba(255,255,255,0.04);
+}
+
+/* Responsive */
+@media(max-width: 800px) {
+    .table-container {
+        width: 95%;
+        padding: 10px;
+    }
+    th, td {
+        padding: 10px;
+        font-size: 12px;
+    }
+}

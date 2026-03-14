@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='login_admin.css') }}">
+</head>
+<body class="login-body">
+
+    <!-- Login container -->
+    <div class="login-container">
+        <!-- Title -->
+        <h1 class="login-title">🌞 Admin Login</h1>
+
+        <!-- Flash message for errors -->
+        {% with messages = get_flashed_messages(category_filter=["error"]) %}
+          {% if messages %}
+            <div class="flash-error">{{ messages[0] }}</div>
+          {% endif %}
+        {% endwith %}
+
+        <!-- Login form -->
+        <form action="{{ url_for('login_admin') }}" method="post" class="login-form">
+            <input type="text" name="username" placeholder="Username" required class="login-input">
+            <input type="password" name="password" placeholder="Password" required class="login-input">
+            <button type="submit" class="login-btn">Login</button>
+        </form>
+
+        <!-- Student login link -->
+        <a href="{{ url_for('login_student') }}" class="alt-link">Student Login</a>
+    </div>
+
+</body>
+</html>

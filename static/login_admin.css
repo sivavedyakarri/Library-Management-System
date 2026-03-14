@@ -1,0 +1,102 @@
+/* Full Page - Black Background */
+body.login-body {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background: #000;  
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Login Box */
+.login-container {
+    background: #1a1a1a;
+    padding: 20px 25px; /* reduced padding */
+    border-radius: 50px; /* pill-shaped */
+    box-shadow: 0 6px 25px rgba(255, 255, 255, 0.08);
+    width: 350px;
+    text-align: center;
+    position: relative;
+    color: #f5f5f5;
+}
+
+/* Sun Logo */
+.login-container .sun-logo {
+    font-size: 40px;
+    color: #C0C0C0; /* silver */
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+/* Title */
+.login-title {
+    color: #fff;
+    font-size: 22px;
+    margin-bottom: 12px; /* reduced space */
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/* Flash message */
+.flash-error {
+    color: #FF4C4C;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+/* Input Fields */
+.login-input {
+    width: 100%;
+    padding: 8px 12px; /* reduced padding */
+    margin: 6px 0; /* reduced space between fields */
+    border: 1px solid #555;
+    border-radius: 50px; /* pill-shaped */
+    background: #2b2b2b;
+    color: #f5f5f5;
+    font-size: 14px;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box;
+}
+
+.login-input:focus {
+    border: 1px solid #C0C0C0;
+    box-shadow: 0 0 8px rgba(192,192,192,0.4);
+    outline: none;
+}
+
+/* Button */
+.login-btn {
+    width: 100%;
+    padding: 8px 12px; /* reduced padding to match inputs */
+    margin-top: 6px;
+    background: #fff;
+    color: #000;
+    border: none;
+    border-radius: 50px; /* pill-shaped */
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-sizing: border-box;
+}
+
+.login-btn:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 10px rgba(192,192,192,0.6);
+}
+
+/* Link */
+.alt-link {
+    display: inline-block;
+    margin-top: 8px; /* reduced space */
+    font-size: 14px;
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.alt-link:hover {
+    color: #fff;
+}
